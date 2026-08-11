@@ -1,0 +1,71 @@
+.chess-piece {
+
+    width: 100%;
+    height: 100%;
+
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    font-size: 58px;
+    line-height: 1;
+
+
+    cursor: pointer;
+    user-select: none;
+
+
+    
+    transition: transform 0.15s ease;
+
+
+}
+
+
+
+
+.chess-piece:hover {
+
+    transform: scale(1.08);
+
+}
+
+
+
+
+.white-piece {
+
+    color: #f8f5ee;
+
+    text-shadow:
+        0 2px 3px rgba(0, 0, 0, 0.8),
+        0 0 2px #000;
+
+    }
+
+
+
+
+
+    .black-piece {
+
+        color: #000000;
+
+
+        text-shadow:
+        0 1px 1px rgba(255, 255, 255, 0.274);
+
+    }
+
+
+
+
+
+.square.selected {
+
+    outline: 4px solid rgba(21, 0, 159, 0.8);
+    outline-offset: -4px;
+
+}
