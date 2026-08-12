@@ -1,31 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Chess Master</title>
 
-    <link rel="stylesheet" href="css/board.css">
-    <link rel="stylesheet" href="css/pieces.css">
-    <link rel="stylesheet" href="css/ui.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link
+        rel="stylesheet"
+        href="css/board.css"
+    >
 </head>
+
 
 
 <body>
 
-    <div id="game-container">
+    <!-- Background -->
+    <div class="horror-bg">
+        <div class="fog fog-1"></div>
+        <div class="fog fog-2"></div>
 
-        <h1>Chess Master</h1>
+        <div class="blood-moon"></div>
 
-        <div id="board-container"></div>
-    
+        <div class="rune rune-1">♞</div>
+        <div class="rune rune-2">♜</div>
+        <div class="rune rune-3">♟</div>
+        <div class="rune rune-4">♛</div>
+        <div class="rune rune-5">☠</div>
+        <div class="rune rune-6">♚</div>
     </div>
 
+
+
+
+
+    
+    <div id="particles"></div>
+
+
+    
+    <main id="game-container">
+
+        <div class="top-bar">
+
+            <div class="game-logo">
+                <span>♛</span>
+                CHESS MASTER
+            </div>
+
+            <button
+                id="options-button"
+                class="icon-button"
+            >
+                ⚙
+            </button>
+
+        </div>
+
+
+        <div class="subtitle">
+            THE LAST GAME
+        </div>
+
+
+        <div class="status-panel">
+
+            <div class="player">
+                <span class="player-icon">♟</span>
+                <span>BLACK</span>
+            </div>
+
+            <div class="vs">
+                VS
+            </div>
+
+            <div class="player">
+                <span class="player-icon">♙</span>
+                <span>WHITE</span>
+            </div>
+
+        </div>
+
+
+    
+        <div id="board-container"></div>
+
+
+        <div class="bottom-panel">
+
+            <div class="game-stat">
+                <span>ROUND</span>
+                <strong id="round-number">01</strong>
+            </div>
+
+            <div class="game-warning">
+                <span class="warning-dot"></span>
+                THE GAME HAS BEGUN
+            </div>
+
+            <div class="game-stat">
+                <span>TIME</span>
+                <strong id="game-time">00:00</strong>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Options -->
+    <div
+        id="options-overlay"
+        class="options-overlay hidden"
+    >
+
+        <div class="options-panel">
+
+            <button
+                id="close-options"
+                class="close-button"
+            >
+                ×
+            </button>
+
+            <h2>GAME OPTIONS</h2>
+
+            <p class="options-subtitle">
+                CONTROL THE DARKNESS
+            </p>
+
+
+            <div class="option-row">
+
+                <div>
+                    <strong>Particles</strong>
+                    <small>Floating background effects</small>
+                </div>
+
+                <button
+                    class="toggle active"
+                    data-option="particles"
+                >
+                    ON
+                </button>
+
+            </div>
+
+
+            <div class="option-row">
+
+                <div>
+                    <strong>Fog</strong>
+                    <small>Atmospheric horror effect</small>
+                </div>
+
+                <button
+                    class="toggle active"
+                    data-option="fog"
+                >
+                    ON
+                </button>
+
+            </div>
+
+
+            <div class="option-row">
+
+                <div>
+                    <strong>Glow</strong>
+                    <small>Red supernatural lighting</small>
+                </div>
+
+                <button
+                    class="toggle active"
+                    data-option="glow"
+                >
+                    ON
+                </button>
+
+            </div>
+
+
+            <div class="option-row">
+
+                <div>
+                    <strong>Animations</strong>
+                    <small>Board and background motion</small>
+                </div>
+
+                <button
+                    class="toggle active"
+                    data-option="animations"
+                >
+                    ON
+                </button>
+
+            </div>
+
+
+            <div class="theme-section">
+
+                <span>BOARD THEME</span>
+
+                <div class="theme-buttons">
+
+                    <button
+                        class="theme-button active"
+                        data-theme="blood"
+                    >
+                        BLOOD
+                    </button>
+
+                    <button
+                        class="theme-button"
+                        data-theme="void"
+                    >
+                        VOID
+                    </button>
+
+                    <button
+                        class="theme-button"
+                        data-theme="bone"
+                    >
+                        BONE
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="fullscreen-button"
+                class="big-option-button"
+            >
+                ⛶ FULLSCREEN
+            </button>
+
+        </div>
+
+    </div>
+
+
+    
     <script src="js/main.js"></script>
+
+  
+    <script src="js/effects.js"></script>
 
 </body>
 
