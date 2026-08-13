@@ -1,3 +1,167 @@
+/* ==========================================
+   THEME VARIABLES
+   Every color in the whole project reads from
+   these variables, so switching [data-theme]
+   on <body> re-skins everything instantly.
+========================================== */
+
+:root,
+body[data-theme="blood"] {
+
+    --accent: #b00000;
+    --accent-bright: #ff2020;
+    --accent-dim: #700000;
+    --accent-darker: #350000;
+    --accent-darkest: #280000;
+
+    --glow: rgba(255, 0, 0, .5);
+    --glow-soft: rgba(255, 0, 0, .18);
+    --glow-strong: rgba(255, 0, 0, .8);
+
+    --bg-1: #250000;
+    --bg-2: #100000;
+    --bg-3: #050505;
+    --bg-4: #010101;
+
+    --moon-color-1: rgba(180, 0, 0, .55);
+    --moon-color-2: rgba(70, 0, 0, .18);
+
+    --particle-color: #8b0000;
+    --particle-glow: #ff0000;
+
+    --rune-color: rgba(150, 0, 0, .12);
+
+    --square-light-1: #3c3330;
+    --square-light-2: #292422;
+    --square-dark-1: #191414;
+    --square-dark-2: #0b0808;
+
+    --selected-1: #850000;
+    --selected-2: #330000;
+
+    --check-1: #ff0000;
+    --check-2: #300000;
+
+    --piece-white: #eeeeee;
+    --piece-white-glow: rgba(255, 255, 255, .35);
+    --piece-black: #050505;
+    --piece-black-glow: rgba(255, 0, 0, .3);
+
+    --panel-border: rgba(255, 0, 0, .25);
+    --panel-glow: rgba(150, 0, 0, .2);
+
+    --text-dim: #777;
+    --text-dimmer: #666;
+    --text-bright: #eee;
+    --text-mid: #ddd;
+}
+
+
+
+body[data-theme="void"] {
+
+    --accent: #6a0dad;
+    --accent-bright: #b060ff;
+    --accent-dim: #3a0a5c;
+    --accent-darker: #1c0530;
+    --accent-darkest: #120321;
+
+    --glow: rgba(150, 30, 255, .5);
+    --glow-soft: rgba(150, 30, 255, .18);
+    --glow-strong: rgba(160, 40, 255, .8);
+
+    --bg-1: #10002b;
+    --bg-2: #06001a;
+    --bg-3: #030008;
+    --bg-4: #000000;
+
+    --moon-color-1: rgba(110, 0, 200, .5);
+    --moon-color-2: rgba(40, 0, 90, .2);
+
+    --particle-color: #6a0dad;
+    --particle-glow: #b060ff;
+
+    --rune-color: rgba(140, 40, 220, .14);
+
+    --square-light-1: #2c2438;
+    --square-light-2: #1c1726;
+    --square-dark-1: #130f1a;
+    --square-dark-2: #08060c;
+
+    --selected-1: #4b0082;
+    --selected-2: #1a0030;
+
+    --check-1: #a020f0;
+    --check-2: #1c0030;
+
+    --piece-white: #eae0ff;
+    --piece-white-glow: rgba(190, 140, 255, .4);
+    --piece-black: #050308;
+    --piece-black-glow: rgba(160, 40, 255, .35);
+
+    --panel-border: rgba(150, 30, 255, .3);
+    --panel-glow: rgba(110, 0, 200, .25);
+
+    --text-dim: #8a7ba0;
+    --text-dimmer: #6e6280;
+    --text-bright: #ece4ff;
+    --text-mid: #d8cdf0;
+}
+
+
+
+body[data-theme="bone"] {
+
+    --accent: #a68a5b;
+    --accent-bright: #e6d4a3;
+    --accent-dim: #6e5a3a;
+    --accent-darker: #362c1e;
+    --accent-darkest: #201a12;
+
+    --glow: rgba(230, 212, 163, .45);
+    --glow-soft: rgba(230, 212, 163, .16);
+    --glow-strong: rgba(230, 212, 163, .7);
+
+    --bg-1: #1f1c14;
+    --bg-2: #131109;
+    --bg-3: #0a0906;
+    --bg-4: #030302;
+
+    --moon-color-1: rgba(200, 180, 130, .4);
+    --moon-color-2: rgba(90, 78, 50, .16);
+
+    --particle-color: #cbb27e;
+    --particle-glow: #e6d4a3;
+
+    --rune-color: rgba(200, 180, 130, .16);
+
+    --square-light-1: #3a3527;
+    --square-light-2: #262218;
+    --square-dark-1: #17140d;
+    --square-dark-2: #0a0806;
+
+    --selected-1: #7a6435;
+    --selected-2: #2c2412;
+
+    --check-1: #d8b968;
+    --check-2: #2a2210;
+
+    --piece-white: #f2ead6;
+    --piece-white-glow: rgba(240, 225, 190, .4);
+    --piece-black: #12100a;
+    --piece-black-glow: rgba(200, 180, 130, .35);
+
+    --panel-border: rgba(230, 212, 163, .25);
+    --panel-glow: rgba(150, 130, 90, .2);
+
+    --text-dim: #8f8672;
+    --text-dimmer: #6f6857;
+    --text-bright: #f0e9d8;
+    --text-mid: #ddd3ba;
+}
+
+
+
 * {
     box-sizing: border-box;
 }
@@ -21,16 +185,18 @@ body {
         "Times New Roman",
         serif;
 
-    color: #eee;
+    color: var(--text-bright);
 
     background:
         radial-gradient(
             circle at 50% 35%,
-            #250000 0%,
-            #100000 22%,
-            #050505 55%,
-            #010101 100%
+            var(--bg-1) 0%,
+            var(--bg-2) 22%,
+            var(--bg-3) 55%,
+            var(--bg-4) 100%
         );
+
+    transition: background .6s ease;
 }
 
 
@@ -69,8 +235,8 @@ body {
     background:
         radial-gradient(
             circle,
-            rgba(180, 0, 0, .55),
-            rgba(70, 0, 0, .18) 45%,
+            var(--moon-color-1),
+            var(--moon-color-2) 45%,
             transparent 70%
         );
 
@@ -81,167 +247,26 @@ body {
 
 
 
-@keyframes moonPulse {
-
-    from {
-        transform: scale(.95);
-        opacity: .45;
-    }
-
-    to {
-        transform: scale(1.08);
-        opacity: .8;
-    }
-}
-
-
-
-.fog {
-    position: absolute;
-
-    width: 700px;
-    height: 300px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(255,255,255,.055),
-            transparent 70%
-        );
-
-    filter: blur(40px);
-
-    opacity: .45;
-}
-
-.fog-1 {
-    left: -200px;
-    bottom: 5%;
-
-    animation: fogMove1 18s infinite alternate ease-in-out;
-}
-
-.fog-2 {
-    right: -200px;
-    top: 30%;
-
-    animation: fogMove2 23s infinite alternate ease-in-out;
-}
-
-
-
-
-@keyframes fogMove1 {
-
-    from {
-        transform: translateX(-100px);
-    }
-
-    to {
-        transform: translateX(500px);
-    }
-}
-
-
-@keyframes fogMove2 {
-
-    from {
-        transform: translateX(100px);
-    }
-
-    to {
-        transform: translateX(-500px);
-    }
-}
-
-
-
 .rune {
     position: absolute;
 
-    color: rgba(150, 0, 0, .12);
+    color: var(--rune-color);
 
     font-size: 100px;
 
     text-shadow:
-        0 0 30px rgba(255, 0, 0, .2);
+        0 0 30px var(--glow-soft);
 
     animation:
         runeFloat 12s infinite ease-in-out;
 }
 
-
-
-
-.rune-1 {
-    left: 5%;
-    top: 15%;
-}
-
-
-
-
-.rune-2 {
-    right: 7%;
-    top: 25%;
-    animation-delay: 2s;
-}
-
-
-
-
-.rune-3 {
-    left: 15%;
-    bottom: 10%;
-    animation-delay: 4s;
-}
-
-
-
-.rune-4 {
-    right: 15%;
-    bottom: 15%;
-    animation-delay: 6s;
-}
-
-
-
-.rune-5 {
-    left: 45%;
-    top: 8%;
-    font-size: 70px;
-    animation-delay: 3s;
-}
-
-
-
-
-.rune-6 {
-    right: 40%;
-    bottom: 5%;
-    font-size: 80px;
-    animation-delay: 5s;
-}
-
-
-
-
-@keyframes runeFloat {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0deg);
-        opacity: .08;
-    }
-
-    50% {
-        transform: translateY(-35px) rotate(8deg);
-        opacity: .18;
-    }
-}
-
+.rune-1 { left: 5%; top: 15%; }
+.rune-2 { right: 7%; top: 25%; animation-delay: 2s; }
+.rune-3 { left: 15%; bottom: 10%; animation-delay: 4s; }
+.rune-4 { right: 15%; bottom: 15%; animation-delay: 6s; }
+.rune-5 { left: 45%; top: 8%; font-size: 70px; animation-delay: 3s; }
+.rune-6 { right: 40%; bottom: 5%; font-size: 80px; animation-delay: 5s; }
 
 
 
@@ -258,9 +283,6 @@ body {
 }
 
 
-
-
-
 .particle {
     position: absolute;
 
@@ -269,47 +291,14 @@ body {
 
     border-radius: 50%;
 
-    background: #8b0000;
+    background: var(--particle-color);
 
     box-shadow:
-        0 0 8px #ff0000;
+        0 0 8px var(--particle-glow);
 
     animation:
         particleFloat linear infinite;
 }
-
-
-
-
-
-@keyframes particleFloat {
-
-    from {
-        transform:
-            translateY(110vh)
-            translateX(0);
-
-        opacity: 0;
-    }
-
-    20% {
-        opacity: .8;
-    }
-
-    80% {
-        opacity: .5;
-    }
-
-    to {
-        transform:
-            translateY(-20vh)
-            translateX(80px);
-
-        opacity: 0;
-    }
-}
-
-
 
 
 
@@ -348,169 +337,11 @@ body {
 
     box-shadow:
         0 0 100px rgba(0,0,0,.95),
-        0 0 50px rgba(130,0,0,.15),
+        0 0 50px var(--panel-glow),
         inset 0 0 80px rgba(0,0,0,.7);
 
     backdrop-filter: blur(15px);
 }
-
-
-
-
-
-.top-bar {
-
-    width: 100%;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-}
-
-
-
-
-.game-logo {
-
-    font-size: 20px;
-
-    letter-spacing: 3px;
-
-    font-weight: bold;
-}
-
-
-
-
-.game-logo span {
-
-    color: #b00000;
-
-    font-size: 28px;
-
-    margin-right: 8px;
-
-    text-shadow:
-        0 0 15px red;
-}
-
-
-
-
-
-.icon-button {
-
-    width: 45px;
-    height: 45px;
-
-    border-radius: 50%;
-
-    border:
-        1px solid rgba(255,0,0,.3);
-
-    background:
-        rgba(100,0,0,.15);
-
-    color: white;
-
-    font-size: 22px;
-
-    cursor: pointer;
-
-    transition: .25s;
-}
-
-
-
-
-
-.icon-button:hover {
-
-    background: #700000;
-
-    box-shadow:
-        0 0 25px rgba(255,0,0,.5);
-
-    transform: rotate(90deg);
-}
-
-
-
-
-
-
-.subtitle {
-
-    margin-top: 20px;
-
-    margin-bottom: 15px;
-
-    font-size: 13px;
-
-    letter-spacing: 8px;
-
-    color: #777;
-
-    text-align: center;
-}
-
-
-
-
-
-
-.status-panel {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 30px;
-
-    margin-bottom: 20px;
-
-    color: #aaa;
-
-    font-size: 13px;
-
-    letter-spacing: 3px;
-}
-
-
-
-
-.player {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-}
-
-
-
-
-.player-icon {
-
-    font-size: 25px;
-
-    color: #ddd;
-}
-
-
-
-
-.vs {
-
-    color: #700000;
-
-    font-weight: bold;
-}
-
-
 
 
 
@@ -538,10 +369,9 @@ body {
 
     box-shadow:
         0 0 0 1px #000,
-        0 0 50px rgba(100,0,0,.3),
+        0 0 50px var(--panel-glow),
         0 0 100px rgba(0,0,0,.9);
 }
-
 
 
 
@@ -571,8 +401,8 @@ body {
     background:
         linear-gradient(
             135deg,
-            #3c3330,
-            #292422
+            var(--square-light-1),
+            var(--square-light-2)
         );
 }
 
@@ -583,8 +413,8 @@ body {
     background:
         linear-gradient(
             135deg,
-            #191414,
-            #0b0808
+            var(--square-dark-1),
+            var(--square-dark-2)
         );
 }
 
@@ -596,7 +426,7 @@ body {
 
     box-shadow:
         inset 0 0 25px
-        rgba(255,0,0,.18);
+        var(--glow-soft);
 }
 
 
@@ -606,465 +436,70 @@ body {
     background:
         radial-gradient(
             circle,
-            #850000,
-            #330000
+            var(--selected-1),
+            var(--selected-2)
         ) !important;
 
     box-shadow:
         inset 0 0 30px
-        rgba(255,0,0,.8),
+        var(--glow-strong),
 
         0 0 15px
-        rgba(255,0,0,.5);
-
+        var(--glow);
 }
 
 
 
-
-.chess-piece {
-
-    position: relative;
-
-    z-index: 5;
-
-    font-size:
-        clamp(38px, 7vw, 68px);
-
-    line-height: 1;
-
-    font-family:
-        "Segoe UI Symbol",
-        "Noto Sans Symbols",
-        serif;
-
-    transition:
-        transform .15s ease,
-        filter .15s ease;
-
-    user-select: none;
-}
-
-
-
-.white-piece {
-
-    color: #eeeeee;
-
-    text-shadow:
-        0 2px 2px #000,
-        0 0 8px rgba(255,255,255,.35);
-}
-
-
-
-.black-piece {
-
-    color: #050505;
-
-    text-shadow:
-        0 1px 2px #777,
-        0 0 10px rgba(255,0,0,.3);
-}
-
-
-
-.square:hover .chess-piece {
-
-    transform: scale(1.1);
-
-    filter:
-        drop-shadow(
-            0 0 10px
-            rgba(255,0,0,.5)
-        );
-}
-
-
-
-.bottom-panel {
-
-    width: min(640px, 82vw);
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    margin-top: 20px;
-
-    padding: 15px 20px;
-
-    border:
-        1px solid rgba(255,255,255,.07);
-
-    border-radius: 12px;
-
-    background:
-        rgba(0,0,0,.35);
-}
-
-.game-stat {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 4px;
-}
-
-.game-stat span {
-
-    color: #666;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-}
-
-.game-stat strong {
-
-    color: #ddd;
-
-    font-size: 18px;
-}
-
-.game-warning {
-
-    color: #777;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-}
-
-.warning-dot {
-
-    display: inline-block;
-
-    width: 7px;
-    height: 7px;
-
-    margin-right: 7px;
-
-    border-radius: 50%;
-
-    background: #b00000;
+.square.last-move {
 
     box-shadow:
-        0 0 10px red;
-
-    animation:
-        warningBlink 1.2s infinite;
-}
-
-@keyframes warningBlink {
-
-    50% {
-        opacity: .2;
-    }
+        inset 0 0 0 3px var(--glow-soft);
 }
 
 
 
-.options-overlay {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 100;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
+.square.in-check {
 
     background:
-        rgba(0,0,0,.82);
+        radial-gradient(
+            circle,
+            var(--check-1),
+            var(--check-2)
+        ) !important;
 
-    backdrop-filter:
-        blur(12px);
+    animation: checkPulse .7s infinite alternate;
 }
 
 
 
-.options-overlay.hidden {
-
-    display: none;
-}
-
-
-.options-panel {
-
-    position: relative;
-
-    width: min(500px, 90vw);
-
-    padding: 35px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #171313,
-            #050505
-        );
-
-    border:
-        1px solid rgba(255,0,0,.25);
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 0 80px rgba(0,0,0,.9),
-        0 0 35px rgba(150,0,0,.2);
-}
-
-
-.options-panel h2 {
-
-    margin: 0;
-
-    font-size: 28px;
-
-    letter-spacing: 4px;
-
-    color: #eee;
-}
-
-
-.options-subtitle {
-
-    color: #666;
-
-    letter-spacing: 2px;
-
-    font-size: 11px;
-
-    margin-bottom: 25px;
-}
-
-
-.close-button {
-
+.square.move-option::after {
+    content: "";
     position: absolute;
-
-    right: 18px;
-    top: 15px;
-
-    background: none;
-
-    border: none;
-
-    color: #777;
-
-    font-size: 30px;
-
-    cursor: pointer;
-}
-
-
-
-.close-button:hover {
-
-    color: red;
-}
-
-
-
-.option-row {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 16px 0;
-
-    border-bottom:
-        1px solid rgba(255,255,255,.06);
-}
-
-
-.option-row strong {
-
-    display: block;
-
-    color: #ddd;
-}
-
-.option-row small {
-
-    color: #666;
-}
-
-
-
-.toggle {
-
-    min-width: 55px;
-
-    padding: 8px 12px;
-
-    border-radius: 20px;
-
-    border:
-        1px solid #500000;
-
-    background: #180000;
-
-    color: #777;
-
-    cursor: pointer;
-}
-
-
-.toggle.active {
-
-    background: #700000;
-
-    color: white;
-
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent);
     box-shadow:
-        0 0 15px rgba(255,0,0,.25);
+        0 0 12px var(--glow-strong),
+        0 0 25px var(--glow-soft);
+    z-index: 3;
+    pointer-events: none;
 }
 
-
-
-
-.theme-section {
-
-    margin-top: 25px;
-
-    color: #777;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-}
-
-
-
-.theme-buttons {
-
-    display: flex;
-
-    gap: 8px;
-
-    margin-top: 10px;
-}
-
-
-
-.theme-button {
-
-    flex: 1;
-
-    padding: 10px;
-
-    background: #111;
-
-    color: #777;
-
-    border:
-        1px solid #333;
-
-    cursor: pointer;
-
-    border-radius: 7px;
-}
-
-
-
-.theme-button.active {
-
-    color: white;
-
-    border-color: #800000;
-
-    background: #350000;
-}
-
-
-
-
-
-.big-option-button {
-
-    width: 100%;
-
-    margin-top: 25px;
-
-    padding: 14px;
-
-    border:
-        1px solid #600000;
-
-    background:
-        linear-gradient(
-            90deg,
-            #280000,
-            #600000
-        );
-
-    color: white;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    letter-spacing: 2px;
-
-    transition: .2s;
-}
-
-
-
-.big-option-button:hover {
-
+.square.capture-option {
     box-shadow:
-        0 0 25px rgba(255,0,0,.3);
-
-    transform: translateY(-2px);
+        inset 0 0 0 4px var(--accent),
+        inset 0 0 25px var(--glow-soft);
 }
 
-
-
-
-
-@media (max-width: 700px) {
-
-    #game-container {
-
-        width: 96vw;
-
-        min-height: auto;
-
-        padding: 20px 10px 25px;
-
-        margin: 2vh auto;
-    }
-
-    #board-container {
-
-        width: 94vw;
-    }
-
-    .status-panel {
-
-        gap: 15px;
-    }
-
-    .bottom-panel {
-
-        width: 94vw;
-    }
-
-    .game-warning {
-
-        display: none;
-    }
+.square.capture-option::after {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    box-shadow:
+        0 0 15px var(--glow);
+    z-index: 3;
+    pointer-events: none;
 }

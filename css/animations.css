@@ -1,0 +1,220 @@
+@keyframes moonPulse {
+
+    from {
+        transform: scale(.95);
+        opacity: .45;
+    }
+
+    to {
+        transform: scale(1.08);
+        opacity: .8;
+    }
+}
+
+
+
+.fog {
+    position: absolute;
+
+    width: 700px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,255,255,.055),
+            transparent 70%
+        );
+
+    filter: blur(40px);
+
+    opacity: .45;
+}
+
+.fog-1 {
+    left: -200px;
+    bottom: 5%;
+
+    animation: fogMove1 18s infinite alternate ease-in-out;
+}
+
+.fog-2 {
+    right: -200px;
+    top: 30%;
+
+    animation: fogMove2 23s infinite alternate ease-in-out;
+}
+
+
+
+@keyframes fogMove1 {
+
+    from { transform: translateX(-100px); }
+    to { transform: translateX(500px); }
+}
+
+
+@keyframes fogMove2 {
+
+    from { transform: translateX(100px); }
+    to { transform: translateX(-500px); }
+}
+
+
+
+@keyframes runeFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: .08;
+    }
+
+    50% {
+        transform: translateY(-35px) rotate(8deg);
+        opacity: .18;
+    }
+}
+
+
+
+@keyframes particleFloat {
+
+    from {
+        transform:
+            translateY(110vh)
+            translateX(0);
+
+        opacity: 0;
+    }
+
+    20% { opacity: .8; }
+    80% { opacity: .5; }
+
+    to {
+        transform:
+            translateY(-20vh)
+            translateX(80px);
+
+        opacity: 0;
+    }
+}
+
+
+
+@keyframes checkPulse {
+
+    from {
+        box-shadow:
+            inset 0 0 20px var(--glow-soft);
+    }
+
+    to {
+        box-shadow:
+            inset 0 0 45px var(--glow-strong),
+            0 0 20px var(--glow);
+    }
+}
+
+
+
+@keyframes warningBlink {
+
+    50% { opacity: .2; }
+}
+
+
+
+@keyframes pieceDrop {
+
+    from {
+        transform: scale(.4);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+
+
+@keyframes captureFlash {
+
+    0% {
+        filter: brightness(3) drop-shadow(0 0 20px var(--glow-strong));
+        opacity: 1;
+    }
+
+    100% {
+        filter: brightness(1);
+        opacity: 0;
+    }
+}
+
+
+
+@keyframes screenShake {
+
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-8px) rotate(-.4deg); }
+    40% { transform: translateX(7px) rotate(.4deg); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(4px); }
+}
+
+body.screen-shake #game-container {
+    animation: screenShake .45s ease;
+}
+
+
+
+@keyframes squareFlash {
+
+    0% {
+        box-shadow: inset 0 0 60px var(--glow-strong);
+    }
+
+    100% {
+        box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+.square.capture-hit {
+    animation: squareFlash .4s ease;
+}
+
+
+
+@keyframes modalPop {
+
+    from {
+        transform: scale(.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+/* Disable-animations toggle support: collapses every
+   animation/transition to (near) nothing at once. */
+
+body.no-animation *,
+body.no-animation *::before,
+body.no-animation *::after {
+
+    animation-duration: .001s !important;
+    animation-delay: 0s !important;
+    transition-duration: .001s !important;
+}

@@ -1,0 +1,115 @@
+/* Tablet */
+
+@media (max-width: 700px) {
+
+    #game-container {
+        width: 96vw;
+        min-height: auto;
+        padding: 20px 10px 25px;
+        margin: 2vh auto;
+    }
+
+    #board-container {
+        width: 94vw;
+    }
+
+    .status-panel {
+        gap: 15px;
+    }
+
+    .bottom-panel {
+        width: 94vw;
+    }
+
+    .game-warning {
+        display: none;
+    }
+
+    .rune {
+        font-size: 60px;
+    }
+}
+
+
+
+/* Small phones */
+
+@media (max-width: 420px) {
+
+    .game-logo {
+        font-size: 15px;
+        letter-spacing: 1.5px;
+    }
+
+    .game-logo span {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        letter-spacing: 4px;
+        font-size: 11px;
+    }
+
+    .icon-button {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+    .status-panel {
+        font-size: 11px;
+        gap: 10px;
+    }
+
+    .player-icon {
+        font-size: 20px;
+    }
+
+    .chess-piece {
+        font-size: clamp(26px, 8vw, 44px);
+    }
+
+    .options-panel {
+        padding: 22px 18px;
+    }
+
+    .options-panel h2 {
+        font-size: 21px;
+    }
+
+    .theme-buttons {
+        flex-wrap: wrap;
+    }
+
+    .promotion-panel {
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .promotion-piece {
+        width: 52px;
+        height: 52px;
+        font-size: 32px;
+    }
+}
+
+
+
+/* Short viewports (landscape phones) */
+
+@media (max-height: 560px) {
+
+    #game-container {
+        min-height: auto;
+        margin: 1vh auto;
+        padding: 12px 10px 16px;
+    }
+
+    .subtitle {
+        margin: 8px 0;
+    }
+
+    #board-container {
+        width: min(70vh, 92vw);
+    }
+}

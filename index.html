@@ -17,11 +17,31 @@
         rel="stylesheet"
         href="css/board.css"
     >
+
+    <link
+        rel="stylesheet"
+        href="css/pieces.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/animations.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/ui.css"
+    >
 </head>
 
 
 
-<body>
+<body data-theme="blood">
 
     <!-- Background -->
     <div class="horror-bg">
@@ -206,6 +226,64 @@
             </div>
 
 
+            <div class="option-row">
+
+                <div>
+                    <strong>Sound</strong>
+                    <small>Moves, captures, check &amp; checkmate</small>
+                </div>
+
+                <button
+                    class="toggle active"
+                    data-option="sound"
+                >
+                    ON
+                </button>
+
+            </div>
+
+
+            <div class="option-row">
+
+                <div>
+                    <strong>Play vs Computer</strong>
+
+
+
+                    <div class="theme-section">
+
+    <span>AI DIFFICULTY</span>
+
+    <div class="theme-buttons">
+
+        <button class="theme-button" data-difficulty="easy">
+            EASY
+        </button>
+
+        <button class="theme-button active" data-difficulty="medium">
+            MEDIUM
+        </button>
+
+        <button class="theme-button" data-difficulty="hard">
+            HARD
+        </button>
+
+    </div>
+
+</div>
+                    <small>Face an AI opponent as black</small>
+                </div>
+
+                <button
+                    class="toggle"
+                    data-option="ai"
+                >
+                    OFF
+                </button>
+
+            </div>
+
+
             <div class="theme-section">
 
                 <span>BOARD THEME</span>
@@ -250,11 +328,67 @@
     </div>
 
 
-    
-    <script src="js/main.js"></script>
+    <!-- Pawn promotion -->
+    <div
+        id="promotion-overlay"
+        class="promotion-overlay hidden"
+    >
 
-  
-    <script src="js/effects.js"></script>
+        <div class="promotion-panel">
+
+            <div class="promotion-title">
+                CHOOSE YOUR PROMOTION
+            </div>
+
+            <div
+                id="promotion-choices"
+                class="promotion-choices"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Game over -->
+    <div
+        id="game-over-banner"
+        class="game-over-banner hidden"
+    >
+
+        <div
+            id="game-over-title"
+            class="game-over-title"
+        >
+            CHECKMATE
+        </div>
+
+        <div
+            id="game-over-subtitle"
+            class="game-over-subtitle"
+        >
+        </div>
+
+        <button
+            id="game-over-close"
+            class="game-over-close"
+        >
+            CONTINUE VIEWING BOARD
+        </button>
+
+    </div>
+
+
+    <script src="js/utils.js"></script>
+    <script src="js/pieces.js"></script>
+    <script src="js/moveValidator.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/sound.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 
