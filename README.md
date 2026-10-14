@@ -25,4 +25,6 @@ Here's some cool Features:
 
 I think you will like it 
 
-the demo link:
+the demo link:    https://bavlynady47-eg.github.io/Chess_Mater/
+
+made with love :)
